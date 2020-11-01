@@ -3,6 +3,7 @@
 * Use EPOLL network
 * Use thread pool
 * Use buffer pool
+* Support FastCGI
 * Support SSL/TLS(OpenSSL)
 
 Running Cosmos
