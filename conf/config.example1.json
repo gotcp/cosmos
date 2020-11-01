@@ -1,0 +1,66 @@
+{
+    "bind": "0.0.0.0",
+    "listen": 80,
+    "locations": [
+        {
+            "server_name": "sso.soea.cn",
+            "root": "/data/www/htdocs/test1",
+            "indexes": [
+                "index.html",
+                "home.html"
+            ],
+            "filters": [
+                {
+                    "filter": "\\.php$*",
+                    "fastcgi_pass": "127.0.0.1:9000",
+                    "fastcgi_index": "index.php",
+                    "fastcgi_pool_size": 200
+                }
+            ],
+            "error_pages": [
+                {
+                    "code": 404, 
+                    "page": "404.html"
+                },
+                {
+                    "code": 500, 
+                    "page": "500.html"
+                }
+            ]
+        },
+        {
+            "server_name": "rpc.xyz",
+            "root": "/data/www/htdocs/test1",
+            "indexes": [
+                "index.html",
+                "index.php"
+            ],
+            "filters": [
+                {
+                    "filter": "\\.php$*",
+                    "fastcgi_pass": "127.0.0.1:9000",
+                    "fastcgi_index": "index.php",
+                    "fastcgi_pool_size": 200
+                }
+            ]
+        }
+    ],            
+    "ssl_certificate": "",
+    "ssl_certificate_key": "",
+    "default_type": "application/octet-stream",
+    "header_length": 2048,
+    "read_buffer": 4096,
+    "threads": 2048,
+    "timeout": 6,
+    "cache_page_file_size": 8192,
+    "cache_page_file_count": 10000,
+    "cache_file_types": [
+        ".html",
+        ".css",
+        ".png"
+    ],
+    "charset": "utf-8",
+    "gzip": "false",
+    "error_log": "",
+    "access_log": ""
+}
